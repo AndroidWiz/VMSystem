@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-@Preview
 fun DashboardCard(
     modifier: Modifier = Modifier,
     cardHeader: String = "",
@@ -33,7 +32,7 @@ fun DashboardCard(
         modifier = modifier
             .padding(10.dp)
             .fillMaxWidth()
-            .height(height = 90.dp),
+            .height(height = 120.dp),
         shape = RoundedCornerShape(size = 10.dp),
         colors = CardColors(
             containerColor = Color(0xFF152B4A),
@@ -56,11 +55,17 @@ fun DashboardCard(
             Spacer(modifier = modifier.height(height = 5.dp))
             Text(
                 text = cardDetails,
-                fontSize = 20.sp,
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
         }
     }
 
+}
+
+@Composable
+@Preview
+fun DashboardCardPreview() {
+    DashboardCard(cardHeader = "Total Payouts Due", cardDetails = "$12,450")
 }
